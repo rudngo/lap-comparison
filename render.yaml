@@ -6,13 +6,16 @@ services:
     buildCommand: |
       mkdir -p /opt/render/.cargo
       export CARGO_HOME=/opt/render/.cargo
-      pip install --upgrade pip
+      export PIP_ONLY_BINARY=orjson
+      pip install --upgrade pip setuptools wheel
       pip install --only-binary orjson -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     plan: free
     envVars:
       - key: CARGO_HOME
         value: /opt/render/.cargo
+      - key: PIP_ONLY_BINARY
+        value: orjson
       - key: B2_S3_ENDPOINT
         sync: false
       - key: B2_REGION
