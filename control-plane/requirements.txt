@@ -5,3 +5,5 @@ python-multipart==0.0.9
 boto3==1.34.122
 botocore==1.34.122
 modal==0.62.20
+# Force a wheel (no cargo build)
+orjson==3.10.7
