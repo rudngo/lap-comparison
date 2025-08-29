@@ -1,9 +1,16 @@
 fastapi==0.111.0
+starlette==0.37.2          # FastAPI 0.111.x expects Starlette 0.37.x
 uvicorn[standard]==0.30.0
-pydantic==2.7.1
 python-multipart==0.0.9
+
 boto3==1.34.122
 botocore==1.34.122
-modal==0.62.20
-# Force a wheel (no cargo build)
+
+# Modal client library (gives you `import modal` and Stub.lookup without extra server deps)
+modal-client==0.62.20
+
+# Let FastAPI choose the right pydantic within range
+pydantic>=2.7,<3
+
+# Force a prebuilt wheel on Render (avoid building with Cargo)
 orjson==3.10.7
