@@ -1,6 +1,5 @@
 // frontend/app/layout.tsx
 import React from "react";
-import "./globals.css"; // optional, if you want global CSS
 
 export const metadata = {
   title: "Lap Compare (Vision-Only)",
