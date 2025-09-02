@@ -13,7 +13,7 @@ boto3
 botocore
 
 # --- Modal client SDK (gives `import modal`)
-modal-client
+modal
 
 # --- JSON wheel (avoid Rust build)
 orjson
